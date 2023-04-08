@@ -9,8 +9,8 @@ public class Game1 : Game
     private GraphicsDeviceManager _graphics;
     private SpriteBatch _spriteBatch;
     Texture2D _texture;
-    Vector2 position = new Vector2(0, 10);
-    float speed = 2f;
+    Vector2 position = new Vector2(60, 60);
+    float speed = 5f;
     
     int currentTime = 0; // сколько времени прошло
     int period = 50; // частота обновления в миллисекундах
@@ -47,6 +47,8 @@ public class Game1 : Game
 
     protected override void Update(GameTime gameTime)
     {
+        KeyboardState keyboardState = Keyboard.GetState();
+        
         if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed ||
             Keyboard.GetState().IsKeyDown(Keys.Escape))
             Exit();
@@ -56,7 +58,15 @@ public class Game1 : Game
         {
             currentTime -= period;
  
-            position.X += speed;
+            //position.X += speed;
+            if (keyboardState.IsKeyDown(Keys.A) && position.X > 0)
+                position.X -= speed;
+            if (keyboardState.IsKeyDown(Keys.D) && position.X < Window.ClientBounds.Width - frameWidth)
+                position.X += speed;
+            if (keyboardState.IsKeyDown(Keys.W) && position.Y > 0)
+                position.Y -= speed;
+            if (keyboardState.IsKeyDown(Keys.S) && position.Y < Window.ClientBounds.Height - frameHeight)
+                position.Y += speed;
 
             ++currentFrame.Y;
             if (currentFrame.Y >= spriteSize.Y)
