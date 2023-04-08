@@ -1,3 +1,17 @@
+C:\Users\79049\OneDrive\Документы\GitHub\GameProject2023\PlatformerGame2023\bin\Debug\net6.0\Content\1422434242_ed7db70c1148.xnb
+C:\Users\79049\OneDrive\Документы\GitHub\GameProject2023\PlatformerGame2023\bin\Debug\net6.0\Content\2d\1422434242_ed7db70c1148.xnb
+C:\Users\79049\OneDrive\Документы\GitHub\GameProject2023\PlatformerGame2023\bin\Debug\net6.0\Content\2d\Dungeon Ruins Tileset\Dungeon Ruins Tileset\Dungeon Ruins Tileset Day.xnb
+C:\Users\79049\OneDrive\Документы\GitHub\GameProject2023\PlatformerGame2023\bin\Debug\net6.0\Content\2d\Dungeon Ruins Tileset\Dungeon Ruins Tileset\Dungeon Ruins Tileset Night.xnb
+C:\Users\79049\OneDrive\Документы\GitHub\GameProject2023\PlatformerGame2023\bin\Debug\net6.0\Content\2d\Meow Knight\Meow Knight\Meow-Knight_Attack_1.xnb
+C:\Users\79049\OneDrive\Документы\GitHub\GameProject2023\PlatformerGame2023\bin\Debug\net6.0\Content\2d\Meow Knight\Meow Knight\Meow-Knight_Attack_2.xnb
+C:\Users\79049\OneDrive\Документы\GitHub\GameProject2023\PlatformerGame2023\bin\Debug\net6.0\Content\2d\Meow Knight\Meow Knight\Meow-Knight_Attack_3.xnb
+C:\Users\79049\OneDrive\Документы\GitHub\GameProject2023\PlatformerGame2023\bin\Debug\net6.0\Content\2d\Meow Knight\Meow Knight\Meow-Knight_Attack_4.xnb
+C:\Users\79049\OneDrive\Документы\GitHub\GameProject2023\PlatformerGame2023\bin\Debug\net6.0\Content\2d\Meow Knight\Meow Knight\Meow-Knight_Death.xnb
+C:\Users\79049\OneDrive\Документы\GitHub\GameProject2023\PlatformerGame2023\bin\Debug\net6.0\Content\2d\Meow Knight\Meow Knight\Meow-Knight_Dodge.xnb
+C:\Users\79049\OneDrive\Документы\GitHub\GameProject2023\PlatformerGame2023\bin\Debug\net6.0\Content\2d\Meow Knight\Meow Knight\Meow-Knight_Idle.xnb
+C:\Users\79049\OneDrive\Документы\GitHub\GameProject2023\PlatformerGame2023\bin\Debug\net6.0\Content\2d\Meow Knight\Meow Knight\Meow-Knight_Jump.xnb
+C:\Users\79049\OneDrive\Документы\GitHub\GameProject2023\PlatformerGame2023\bin\Debug\net6.0\Content\2d\Meow Knight\Meow Knight\Meow-Knight_Run.xnb
+C:\Users\79049\OneDrive\Документы\GitHub\GameProject2023\PlatformerGame2023\bin\Debug\net6.0\Content\2d\Meow Knight\Meow Knight\Meow-Knight_Take_Damage.xnb
 C:\Users\79049\OneDrive\Документы\GitHub\GameProject2023\PlatformerGame2023\bin\Debug\net6.0\PlatformerGame2023.exe
 C:\Users\79049\OneDrive\Документы\GitHub\GameProject2023\PlatformerGame2023\bin\Debug\net6.0\PlatformerGame2023.deps.json
 C:\Users\79049\OneDrive\Документы\GitHub\GameProject2023\PlatformerGame2023\bin\Debug\net6.0\PlatformerGame2023.runtimeconfig.json
@@ -23,3 +37,4 @@ C:\Users\79049\OneDrive\Документы\GitHub\GameProject2023\PlatformerGame
 C:\Users\79049\OneDrive\Документы\GitHub\GameProject2023\PlatformerGame2023\obj\Debug\net6.0\PlatformerGame2023.pdb
 C:\Users\79049\OneDrive\Документы\GitHub\GameProject2023\PlatformerGame2023\obj\Debug\net6.0\PlatformerGame2023.genruntimeconfig.cache
 C:\Users\79049\OneDrive\Документы\GitHub\GameProject2023\PlatformerGame2023\obj\Debug\net6.0\ref\PlatformerGame2023.dll
+C:\Users\79049\OneDrive\Документы\GitHub\GameProject2023\PlatformerGame2023\bin\Debug\net6.0\Content\2d\ChikBoy_run.xnb
