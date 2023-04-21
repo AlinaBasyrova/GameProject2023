@@ -30,7 +30,10 @@ public class Game1 : Game
         Content.RootDirectory = "Content";
         _spriteBatch = new SpriteBatch(GraphicsDevice);
 
-        _level = new Level(Services);
+        string levelPath = string.Format("Content/Levels/0.txt");
+        using (Stream fileStream = TitleContainer.OpenStream(levelPath)) 
+            _level = new Level(Services, fileStream);
+
         // TODO: use this.Content to load your game content here
     }
 
