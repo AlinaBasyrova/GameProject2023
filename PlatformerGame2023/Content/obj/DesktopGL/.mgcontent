@@ -5,6 +5,7 @@
   <Config />
   <SourceFiles>
     <File>C:/Users/79049/OneDrive/Документы/GitHub/GameProject2023/PlatformerGame2023/Content/2d/1422434242_ed7db70c1148.jpg</File>
+    <File>C:/Users/79049/OneDrive/Документы/GitHub/GameProject2023/PlatformerGame2023/Content/2d/ChikBoy_idle.png</File>
     <File>C:/Users/79049/OneDrive/Документы/GitHub/GameProject2023/PlatformerGame2023/Content/2d/ChikBoy_run.png</File>
     <File>C:/Users/79049/OneDrive/Документы/GitHub/GameProject2023/PlatformerGame2023/Content/2d/Dungeon Ruins Tileset/Dungeon Ruins Tileset/Dungeon Ruins Tileset Day.png</File>
     <File>C:/Users/79049/OneDrive/Документы/GitHub/GameProject2023/PlatformerGame2023/Content/2d/Dungeon Ruins Tileset/Dungeon Ruins Tileset/Dungeon Ruins Tileset Night.png</File>
@@ -20,6 +21,7 @@
     <File>C:/Users/79049/OneDrive/Документы/GitHub/GameProject2023/PlatformerGame2023/Content/2d/Meow Knight/Meow Knight/Meow-Knight_Take_Damage.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

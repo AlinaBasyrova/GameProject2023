@@ -38,3 +38,4 @@ C:\Users\79049\OneDrive\Документы\GitHub\GameProject2023\PlatformerGame
 C:\Users\79049\OneDrive\Документы\GitHub\GameProject2023\PlatformerGame2023\obj\Debug\net6.0\PlatformerGame2023.genruntimeconfig.cache
 C:\Users\79049\OneDrive\Документы\GitHub\GameProject2023\PlatformerGame2023\obj\Debug\net6.0\ref\PlatformerGame2023.dll
 C:\Users\79049\OneDrive\Документы\GitHub\GameProject2023\PlatformerGame2023\bin\Debug\net6.0\Content\2d\ChikBoy_run.xnb
+C:\Users\79049\OneDrive\Документы\GitHub\GameProject2023\PlatformerGame2023\bin\Debug\net6.0\Content\2d\ChikBoy_idle.xnb

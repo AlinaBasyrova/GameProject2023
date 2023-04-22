@@ -14,7 +14,7 @@ public class Level : IDisposable
     public int currentTime = 0; // сколько времени прошло
     public int period = 50; // частота обновления в миллисекундах
     public ContentManager Content => content;
-    private Tile[,] tiles;
+    private static Tile[,] tiles;
     public Player player { get; set; }
     private Platform platform { get; }
     Vector2 startPosition = new Vector2(60, 60);
@@ -42,8 +42,8 @@ public class Level : IDisposable
         }
     }
 
-    public int Width => tiles.GetLength(0);
-    public int Height => tiles.GetLength(1);
+    public static int Width => tiles.GetLength(0);
+    public static int Height => tiles.GetLength(1);
 
 
     private void LoadTiles(Stream fileStream)
@@ -87,7 +87,7 @@ public class Level : IDisposable
     private Tile LoadTile(char tileType, int x, int y) => tileType switch
     {
         '.' => new Tile(null, TileCollision.Passable), // Blank space
-        '-' => LoadTile("2d/Dungeon Ruins Tileset/Dungeon Ruins Tileset/Dungeon Ruins Tileset Night", TileCollision.Platform), //Platform
+        '-' => LoadTile("2d/Dungeon Ruins Tileset/Dungeon Ruins Tileset/Dungeon Ruins Tileset Night", TileCollision.Impassable), //Platform
         'S' => LoadStartTile(x, y), //Player
         _ => throw new ArgumentOutOfRangeException(nameof(tileType), tileType, null)
     };
@@ -107,6 +107,22 @@ public class Level : IDisposable
         player = new Player(this, start);
 
         return new Tile(null, TileCollision.Passable);
+    }
+    
+    public static TileCollision GetCollision(int x, int y)
+    {
+        // Prevent escaping past the level ends.
+        if (x < 0 || x >= Width)
+            return TileCollision.Impassable;
+        // Allow jumping past the level top and falling through the bottom.
+        if (y < 0 || y >= Height)
+            return TileCollision.Passable;
+
+        return tiles[x, y].Collision;
+    }
+    public static Rectangle GetBounds(int x, int y)
+    {
+        return new Rectangle(x * Tile.Width, y * Tile.Height, Tile.Width, Tile.Height);
     }
 
     public void Dispose() => content.Unload();
