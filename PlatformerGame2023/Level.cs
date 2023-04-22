@@ -41,7 +41,7 @@ public class Level : IDisposable
             player.Update(gameTime, keyboardState, window);
         }
     }
-    
+
     public int Width => tiles.GetLength(0);
     public int Height => tiles.GetLength(1);
 
@@ -103,7 +103,7 @@ public class Level : IDisposable
             throw new NotSupportedException("A level may only have one starting point.");
 
         //start = RectangleExtensions.GetBottomCenter(GetBounds(x, y));
-        var start = new Vector2(x, y);
+        var start = new Vector2(x*40, y*40);
         player = new Player(this, start);
 
         return new Tile(null, TileCollision.Passable);
@@ -131,7 +131,9 @@ public class Level : IDisposable
                 {
                     // Draw it in screen space.
                     Vector2 position = new Vector2(x, y) * Tile.Size;
-                    spriteBatch.Draw(texture, position, Color.White);
+                    spriteBatch.Draw(texture, position,
+                        new Rectangle(20,20, 40, 40),
+                        Color.White);
                 }
             }
         }

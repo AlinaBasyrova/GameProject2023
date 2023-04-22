@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using System;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
@@ -11,6 +12,12 @@ public class Player
     Texture2D _texture;
     Vector2 position;
     float speed = 5f;
+    private float movement;
+    
+    // Jumping state
+    private bool isJumping;
+    private bool wasJumping;
+    private float jumpTime;
 
     int frameWidth = 32;
     int frameHeight = 32;
@@ -28,7 +35,6 @@ public class Player
 
     public void Update(GameTime gameTime, KeyboardState keyboardState, Rectangle window)
     {
-        //position.X += speed;
         if (keyboardState.IsKeyDown(Keys.A) && position.X > 0)
             position.X -= speed;
         if (keyboardState.IsKeyDown(Keys.D) && position.X < window.Width - frameWidth)
@@ -44,6 +50,67 @@ public class Player
             currentFrame.Y = 0;
         }
     }
+    
+    /*public void ApplyPhysics(GameTime gameTime)
+    {
+        float elapsed = (float)gameTime.ElapsedGameTime.TotalSeconds;
+
+        Vector2 previousPosition = position;
+
+        // Base velocity is a combination of horizontal movement control and
+        // acceleration downward due to gravity.
+        velocity.X += movement * MoveAcceleration * elapsed;
+        velocity.Y = MathHelper.Clamp(velocity.Y + GravityAcceleration * elapsed, -MaxFallSpeed, MaxFallSpeed);
+
+        velocity.Y = DoJump(velocity.Y, gameTime);
+
+        // Apply pseudo-drag horizontally.
+        if (IsOnGround)
+            velocity.X *= GroundDragFactor;
+        else
+            velocity.X *= AirDragFactor;
+
+        // Prevent the player from running faster than his top speed.            
+        velocity.X = MathHelper.Clamp(velocity.X, -MaxMoveSpeed, MaxMoveSpeed);
+
+        // Apply velocity.
+        position += velocity * elapsed;
+        position = new Vector2((float)Math.Round(position.X), (float)Math.Round(position.Y));
+
+        // If the player is now colliding with the level, separate them.
+        HandleCollisions();
+
+        // If the collision stopped us from moving, reset the velocity to zero.
+        if (position.X == previousPosition.X)
+            velocity.X = 0;
+
+        if (position.Y == previousPosition.Y)
+            velocity.Y = 0;
+    }*/
+
+    
+    private void GetInput(KeyboardState keyboardState)
+    {
+
+        // Ignore small movements to prevent running in place.
+        if (Math.Abs(movement) < 0.5f)
+            movement = 0.0f;
+
+        // If any digital horizontal movement input is found, override the analog movement.
+        if (keyboardState.IsKeyDown(Keys.Left) ||
+            keyboardState.IsKeyDown(Keys.A))
+            movement = -1.0f;
+        else if (keyboardState.IsKeyDown(Keys.Right) ||
+                 keyboardState.IsKeyDown(Keys.D))
+            movement = 1.0f;
+
+        // Check if the player wants to jump.
+        isJumping =
+            keyboardState.IsKeyDown(Keys.Space) ||
+            keyboardState.IsKeyDown(Keys.Up) ||
+            keyboardState.IsKeyDown(Keys.W);
+    }
+
 
     public void Draw(GameTime gameTime, SpriteBatch _spriteBatch)
         {

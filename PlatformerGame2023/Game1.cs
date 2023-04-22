@@ -12,6 +12,7 @@ public class Game1 : Game
     private Level _level;
     private Matrix globalTransformation;
 
+    Texture2D _texture;
 
 
     public Game1()
