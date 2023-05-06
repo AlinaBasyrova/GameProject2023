@@ -10,7 +10,7 @@ public class Player
     private Animation idleAnimation;
     private Animation runAnimation;
     private Animation jumpAnimation;
-    private AnimationPlayer sprite = new AnimationPlayer();
+    private AnimationPlayer sprite = new();
     private SpriteEffects flip = SpriteEffects.None;
 
     public Level level { get; }
@@ -45,6 +45,8 @@ public class Player
     bool isOnGround;
     public bool IsAlive => isAlive;
     bool isAlive;
+    public bool IsHiding => isHiding;
+    bool isHiding;
 
     // Constants for controlling horizontal movement
     private const float MoveAcceleration = 13000.0f;
@@ -53,11 +55,11 @@ public class Player
     private const float AirDragFactor = 0.58f;
 
     // Constants for controlling vertical movement
-    private const float MaxJumpTime = 0.35f;
+    private const float MaxJumpTime = 0.1f;
     private const float JumpLaunchVelocity = -3500.0f;
     private const float GravityAcceleration = 3400.0f;
     private const float MaxFallSpeed = 550.0f;
-    private const float JumpControlPower = 0.14f;
+    private const float JumpControlPower = 0.2f;
     
     private Rectangle localBounds;
     public Rectangle BoundingRectangle
@@ -71,16 +73,10 @@ public class Player
         }
     }
 
-    int frameWidth = 32;
-    int frameHeight = 32;
-    Point currentFrame = new Point(0, 0);
-    Point spriteSize = new Point(1, 10);
-
     public Player(Level level, Vector2 position)
     {
         this.level = level;
         this.position = position;
-        //_texture = Level.content.Load<Texture2D>("2d/ChikBoy_run");
         LoadContent();
         Reset(position);
     }
@@ -107,20 +103,6 @@ public class Player
 
     public void Update(GameTime gameTime, KeyboardState keyboardState, Rectangle window)
     {
-        /*if (keyboardState.IsKeyDown(Keys.A) && position.X > 0)
-            position.X -= speed;
-        if (keyboardState.IsKeyDown(Keys.D) && position.X < window.Width - frameWidth)
-            position.X += speed;
-        if (keyboardState.IsKeyDown(Keys.W) && position.Y > 0)
-            position.Y -= speed;
-        if (keyboardState.IsKeyDown(Keys.S) && position.Y < window.Height - frameHeight)
-            position.Y += speed;
-
-        ++currentFrame.Y;
-        if (currentFrame.Y >= spriteSize.Y)
-        {
-            currentFrame.Y = 0;
-        }*/
         GetInput(keyboardState);
         ApplyPhysics(gameTime);
         
@@ -146,8 +128,6 @@ public class Player
 
         Vector2 previousPosition = position;
 
-        // Base velocity is a combination of horizontal movement control and
-        // acceleration downward due to gravity.
         velocity.X += movement * MoveAcceleration * elapsed;
         velocity.Y = MathHelper.Clamp(velocity.Y + GravityAcceleration * elapsed, -MaxFallSpeed, MaxFallSpeed);
 
@@ -185,11 +165,7 @@ public class Player
             // Begin or continue a jump
             if ((!wasJumping && IsOnGround) || jumpTime > 0.0f)
             {
-                //if (jumpTime == 0.0f)
-                    //jumpSound.Play();
-
-                    jumpTime += (float)gameTime.ElapsedGameTime.TotalSeconds;
-                //sprite.PlayAnimation(jumpAnimation);
+                jumpTime += (float)gameTime.ElapsedGameTime.TotalSeconds;
             }
 
             // If we are in the ascent of the jump
@@ -248,7 +224,7 @@ public class Player
 
             // Reset flag to search for ground collision.
             isOnGround = false;
-
+            isHiding = false;
             // For each potentially colliding tile,
             for (int y = topTile; y <= bottomTile; y++)
             {
@@ -256,6 +232,10 @@ public class Player
                 {
                     // If this tile is collidable,
                     TileCollision collision = Level.GetCollision(x, y);
+
+                    if (collision == TileCollision.Hiding)
+                        isHiding = true;
+
                     if (collision != TileCollision.Passable)
                     {
                         // Determine collision depth (with direction) and magnitude.
@@ -267,7 +247,7 @@ public class Player
                             float absDepthY = Math.Abs(depth.Y);
 
                             // Resolve the collision along the shallow axis.
-                            if (absDepthY < absDepthX || collision == TileCollision.Platform)
+                            if (absDepthY < absDepthX || collision == TileCollision.Hiding)
                             {
                                 // If we crossed the top of a tile, we are on the ground.
                                 if (previousBottom <= tileBounds.Top)
@@ -282,6 +262,7 @@ public class Player
                                     // Perform further collisions with the new bounds.
                                     bounds = BoundingRectangle;
                                 }
+
                             }
                             else if (collision == TileCollision.Impassable) // Ignore platforms.
                             {
@@ -296,26 +277,21 @@ public class Player
                 }
             }
 
-            // Save the new bounds bottom.
             previousBottom = bounds.Bottom;
         }
     
+    public void OnKilled()
+    {
+        isAlive = false;
+    }
+    
     public void Draw(GameTime gameTime, SpriteBatch _spriteBatch)
     {
-        /*_spriteBatch.Draw(_texture, position,
-            new Rectangle(currentFrame.X * frameWidth,
-                currentFrame.Y * frameHeight,
-                frameWidth, frameHeight),
-            Color.White, 0, Vector2.Zero,
-            1, SpriteEffects.None, 0);*/
-        
-        // Flip the sprite to face the way we are moving.
-        if (Velocity.X > 0)
+        if (Velocity.X < 0)
             flip = SpriteEffects.FlipHorizontally;
-        else if (Velocity.X < 0)
+        else if (Velocity.X > 0)
             flip = SpriteEffects.None;
 
-        // Draw that sprite.
-        sprite.Draw(gameTime, _spriteBatch, Position, flip);
+        sprite.Draw(gameTime, _spriteBatch, Position, flip, Color.White);
     }
 }
