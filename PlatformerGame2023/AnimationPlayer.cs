@@ -13,19 +13,20 @@ public class AnimationPlayer
     int frameIndex;
     
     private float time;
+    public bool IsAnimationEnd => isAnimationEnd;
+    private bool isAnimationEnd;
 
     public Vector2 Origin => new Vector2(Animation.FrameWidth, Animation.FrameHeight);
     
     public void PlayAnimation(Animation animation)
     {
-        // If this animation is already running, do not restart it.
         if (Animation == animation)
             return;
 
-        // Start the new animation.
         this.animation = animation;
         this.frameIndex = 0;
         this.time = 0.0f;
+        isAnimationEnd = false;
     }
     
     public void Draw(GameTime gameTime, SpriteBatch spriteBatch, Vector2 position, SpriteEffects spriteEffects, Color color)
@@ -33,13 +34,11 @@ public class AnimationPlayer
         if (Animation == null)
             throw new NotSupportedException("No animation is currently playing.");
 
-        // Process passing time.
         time += (float)gameTime.ElapsedGameTime.TotalSeconds;
         while (time > Animation.FrameTime)
         {
             time -= Animation.FrameTime;
 
-            // Advance the frame index; looping or clamping as appropriate.
             if (Animation.IsLooping)
             {
                 frameIndex = (frameIndex + 1) % Animation.FrameCount;
@@ -48,12 +47,16 @@ public class AnimationPlayer
             {
                 frameIndex = Math.Min(frameIndex + 1, Animation.FrameCount - 1);
             }
+            
+            if (frameIndex == Animation.FrameCount - 1)
+                isAnimationEnd = true;
+            else
+            {
+                isAnimationEnd = false;
+            }
         }
 
-        // Calculate the source rectangle of the current frame.
-        Rectangle source = new Rectangle(0, FrameIndex * Animation.Texture.Width, Animation.Texture.Width, Animation.Texture.Width);
-
-        // Draw the current frame.
+        Rectangle source = new Rectangle(0, FrameIndex * Animation.FrameHeight, Animation.FrameWidth, Animation.FrameHeight);
         spriteBatch.Draw(Animation.Texture, position, source, color, 0.0f, Origin, 1.0f, spriteEffects, 0.0f);
     }
 }

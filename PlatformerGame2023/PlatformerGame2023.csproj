@@ -27,6 +27,12 @@
     <ItemGroup>
       <Compile Remove="Content\obj\**" />
       <Compile Remove="Game.cs" />
+      <Compile Remove="StartScreen.cs" />
+      <Compile Remove="Physics.cs" />
+      <Compile Remove="Enemy2.cs" />
+      <Compile Remove="EnemyAI.cs" />
+      <Compile Remove="GamePhysics.cs" />
+      <Compile Remove="IEntity.cs" />
     </ItemGroup>
     <ItemGroup>
       <Folder Include="Content\Audio" />

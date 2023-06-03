@@ -39,3 +39,33 @@ C:\Users\79049\OneDrive\Документы\GitHub\GameProject2023\PlatformerGame
 C:\Users\79049\OneDrive\Документы\GitHub\GameProject2023\PlatformerGame2023\obj\Debug\net6.0\ref\PlatformerGame2023.dll
 C:\Users\79049\OneDrive\Документы\GitHub\GameProject2023\PlatformerGame2023\bin\Debug\net6.0\Content\2d\ChikBoy_run.xnb
 C:\Users\79049\OneDrive\Документы\GitHub\GameProject2023\PlatformerGame2023\bin\Debug\net6.0\Content\2d\ChikBoy_idle.xnb
+C:\Users\79049\OneDrive\Документы\GitHub\GameProject2023\PlatformerGame2023\bin\Debug\net6.0\Content\2d\Bullet.xnb
+C:\Users\79049\OneDrive\Документы\GitHub\GameProject2023\PlatformerGame2023\bin\Debug\net6.0\Content\2d\Ball and Chain Bot\attack.xnb
+C:\Users\79049\OneDrive\Документы\GitHub\GameProject2023\PlatformerGame2023\bin\Debug\net6.0\Content\2d\Ball and Chain Bot\charge.xnb
+C:\Users\79049\OneDrive\Документы\GitHub\GameProject2023\PlatformerGame2023\bin\Debug\net6.0\Content\2d\Ball and Chain Bot\death.xnb
+C:\Users\79049\OneDrive\Документы\GitHub\GameProject2023\PlatformerGame2023\bin\Debug\net6.0\Content\2d\Ball and Chain Bot\hit.xnb
+C:\Users\79049\OneDrive\Документы\GitHub\GameProject2023\PlatformerGame2023\bin\Debug\net6.0\Content\2d\Ball and Chain Bot\idle.xnb
+C:\Users\79049\OneDrive\Документы\GitHub\GameProject2023\PlatformerGame2023\bin\Debug\net6.0\Content\2d\Ball and Chain Bot\run.xnb
+C:\Users\79049\OneDrive\Документы\GitHub\GameProject2023\PlatformerGame2023\bin\Debug\net6.0\Content\2d\Ball and Chain Bot\transition to charge.xnb
+C:\Users\79049\OneDrive\Документы\GitHub\GameProject2023\PlatformerGame2023\bin\Debug\net6.0\Content\2d\Ball and Chain Bot\run1.xnb
+C:\Users\79049\OneDrive\Документы\GitHub\GameProject2023\PlatformerGame2023\bin\Debug\net6.0\Content\2d\Bot Wheel\GAS dash FX.xnb
+C:\Users\79049\OneDrive\Документы\GitHub\GameProject2023\PlatformerGame2023\bin\Debug\net6.0\Content\2d\Bot Wheel\GAS dash with FX.xnb
+C:\Users\79049\OneDrive\Документы\GitHub\GameProject2023\PlatformerGame2023\bin\Debug\net6.0\Content\2d\Bot Wheel\charge.xnb
+C:\Users\79049\OneDrive\Документы\GitHub\GameProject2023\PlatformerGame2023\bin\Debug\net6.0\Content\2d\Bot Wheel\damaged.xnb
+C:\Users\79049\OneDrive\Документы\GitHub\GameProject2023\PlatformerGame2023\bin\Debug\net6.0\Content\2d\Bot Wheel\death.xnb
+C:\Users\79049\OneDrive\Документы\GitHub\GameProject2023\PlatformerGame2023\bin\Debug\net6.0\Content\2d\Bot Wheel\move FX.xnb
+C:\Users\79049\OneDrive\Документы\GitHub\GameProject2023\PlatformerGame2023\bin\Debug\net6.0\Content\2d\Bot Wheel\move with FX.xnb
+C:\Users\79049\OneDrive\Документы\GitHub\GameProject2023\PlatformerGame2023\bin\Debug\net6.0\Content\2d\Bot Wheel\move without FX.xnb
+C:\Users\79049\OneDrive\Документы\GitHub\GameProject2023\PlatformerGame2023\bin\Debug\net6.0\Content\2d\Bot Wheel\shoot FX.xnb
+C:\Users\79049\OneDrive\Документы\GitHub\GameProject2023\PlatformerGame2023\bin\Debug\net6.0\Content\2d\Bot Wheel\shoot with FX.xnb
+C:\Users\79049\OneDrive\Документы\GitHub\GameProject2023\PlatformerGame2023\bin\Debug\net6.0\Content\2d\Bot Wheel\shoot without FX.xnb
+C:\Users\79049\OneDrive\Документы\GitHub\GameProject2023\PlatformerGame2023\bin\Debug\net6.0\Content\2d\Bot Wheel\static idle.xnb
+C:\Users\79049\OneDrive\Документы\GitHub\GameProject2023\PlatformerGame2023\bin\Debug\net6.0\Content\2d\Bot Wheel\wake.xnb
+C:\Users\79049\OneDrive\Документы\GitHub\GameProject2023\PlatformerGame2023\bin\Debug\net6.0\Content\2d\Background1.xnb
+C:\Users\79049\OneDrive\Документы\GitHub\GameProject2023\PlatformerGame2023\bin\Debug\net6.0\Content\2d\Props-01.xnb
+C:\Users\79049\OneDrive\Документы\GitHub\GameProject2023\PlatformerGame2023\bin\Debug\net6.0\Content\2d\Tiles.xnb
+C:\Users\79049\OneDrive\Документы\GitHub\GameProject2023\PlatformerGame2023\bin\Debug\net6.0\Content\2d\Player\Idle\player_idle_01.xnb
+C:\Users\79049\OneDrive\Документы\GitHub\GameProject2023\PlatformerGame2023\bin\Debug\net6.0\Content\2d\Thrusts 1 SpriteSheet.xnb
+C:\Users\79049\OneDrive\Документы\GitHub\GameProject2023\PlatformerGame2023\bin\Debug\net6.0\Content\2d\you_win.xnb
+C:\Users\79049\OneDrive\Документы\GitHub\GameProject2023\PlatformerGame2023\bin\Debug\net6.0\Content\2d\you_died.xnb
+C:\Users\79049\OneDrive\Документы\GitHub\GameProject2023\PlatformerGame2023\bin\Debug\net6.0\Content\2d\Background2.xnb

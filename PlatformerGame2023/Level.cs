@@ -13,14 +13,19 @@ public class Level : IDisposable
 {
     public int currentTime;
     public int period = 50;
-    public Vector2 start = new Vector2(40, 60);
+    public Vector2 start = new(40, 60);
+    private Point? finishPoint = null;
+
 
     public ContentManager Content => content;
     private static Tile[,] tiles;
-    private List<Enemy> enemies = new();
+    public List<Enemy> enemies = new();
+    public List<Bullet> bullets = new();
 
     public Player player { get; set; }
     public static ContentManager content;
+    public bool IsExiteReached => isExiteReached;
+    bool isExiteReached;
 
 
     public Level(IServiceProvider serviceProvider, Stream fileStream)
@@ -37,14 +42,50 @@ public class Level : IDisposable
         {
             currentTime -= period;
             player.Update(gameTime, keyboardState, window);
-            foreach (Enemy enemy in enemies)
+            
+            for (var i = 0; i < enemies.Count; i++)
             {
+                var enemy = enemies[i];
                 enemy.Update(gameTime);
-                if (!player.IsHiding && enemy.BoundingRectangle.Intersects(player.BoundingRectangle))
+                if (player.attack != null && enemy.BoundingRectangle.Intersects(player.attack.BoundingRectangle))
+                {
+                    enemies.RemoveAt(i--);
+                    continue;
+                }
+                if (enemy.BoundingRectangle.Intersects(player.BoundingRectangle))
+                {
+
+                    if (player.IsHiding)
+                        continue;
+                    player.OnKilled();
+                }
+            }
+
+            for (var i = 0; i < bullets.Count; i++)
+            {
+                var bullet = bullets[i];
+                bullet.Update(gameTime);
+                var bounds = bullet.BoundingRectangle;
+                
+                int x = (int)Math.Floor((float)bounds.Left / Tile.Width);
+                int y = (int)Math.Floor((float)bounds.Top / Tile.Height);
+                if (bounds.Intersects(player.BoundingRectangle))
                 {
                     player.OnKilled();
-                    player.Reset(start);
+                    bullets.RemoveAt(i--);
                 }
+                if (GetCollision(x, y) == TileCollision.Impassable)
+                {
+                    bullets.RemoveAt(i--);
+                }
+            }
+
+
+            if (player.IsAlive &&
+                player.IsOnGround &&
+                player.BoundingRectangle.Contains((Point)finishPoint))
+            {
+                isExiteReached = true;
             }
         }
     }
@@ -90,12 +131,17 @@ public class Level : IDisposable
     private Tile LoadTile(char tileType, int x, int y) => tileType switch
     {
         '.' => new Tile(null, TileCollision.Passable), // Blank space
-        '-' => LoadTile("2d/Dungeon Ruins Tileset/Dungeon Ruins Tileset/Dungeon Ruins Tileset Night",
+        '-' => LoadTile("2d/Tiles",
             TileCollision.Impassable),
-        'H' => LoadTile("2d/Dungeon Ruins Tileset/Dungeon Ruins Tileset/Dungeon Ruins Tileset Day",
+        'H' => LoadTile("2d/Props-01",
             TileCollision.Hiding),
+        'L' => LoadTile("2d/Tiles",
+            TileCollision.Ladder),
         'S' => LoadStartTile(x, y), //Player
-        'E' => LoadEnemyTile(x, y, "enemy"),
+        'F' => LoadExitTile(x, y),
+        '1' => LoadEnemyTile(x, y, 1),
+        '2' => LoadEnemyTile(x, y, 2),
+
         _ => throw new ArgumentOutOfRangeException(nameof(tileType), tileType, null)
     };
 
@@ -115,17 +161,38 @@ public class Level : IDisposable
         return new Tile(null, TileCollision.Passable);
     }
 
-    private Tile LoadEnemyTile(int x, int y, string spriteSet)
+    private Tile LoadExitTile(int x, int y)
+    {
+        if (finishPoint != null)
+            throw new NotSupportedException("A level may only have one exit.");
+
+        finishPoint = GetBounds(x, y).Center;
+
+        return LoadTile("2d/Props-01",
+            TileCollision.Passable);
+    }
+
+    private Tile LoadEnemyTile(int x, int y, int type)
     {
         Vector2 position = RectangleExtensions.GetBottomCenter(GetBounds(x, y));
-        enemies.Add(new Enemy(this, position, spriteSet));
+        if (type == 1)
+            enemies.Add(new Enemy(this, position, 1));
+        else
+        {
+            enemies.Add(new Enemy(this, position, 2));
+        }
 
         return new Tile(null, TileCollision.Passable);
     }
 
+    public void CreateBullet(Vector2 position, FaceDirection direction)
+    {
+        Bullet bullet = new Bullet(this, position, direction);
+        bullets.Add(bullet);
+    }
+
     public static TileCollision GetCollision(int x, int y)
     {
-        // Prevent escaping past the level ends.
         if (x < 0 || x >= Width)
             return TileCollision.Impassable;
         if (y < 0 || y >= Height)
@@ -147,6 +214,8 @@ public class Level : IDisposable
         player.Draw(gameTime, _spriteBatch);
         foreach (Enemy enemy in enemies)
             enemy.Draw(gameTime, _spriteBatch);
+        foreach (Bullet bullet in bullets)
+            bullet.Draw(gameTime, _spriteBatch);
     }
 
     private void DrawTiles(SpriteBatch spriteBatch)
@@ -156,15 +225,27 @@ public class Level : IDisposable
         {
             for (int x = 0; x < Width; ++x)
             {
-                // If there is a visible tile in that position
                 Texture2D texture = tiles[x, y].Texture;
                 if (texture != null)
                 {
-                    // Draw it in screen space.
                     Vector2 position = new Vector2(x, y) * Tile.Size;
-                    spriteBatch.Draw(texture, position,
-                        new Rectangle(20, 20, 40, 40),
-                        Color.White);
+
+                    if (tiles[x, y].Collision == TileCollision.Hiding)
+                    {
+                        spriteBatch.Draw(texture, position,
+                            new Rectangle(50, 0, Tile.Width, Tile.Height),
+                            Color.White);
+                    }
+                    else if (tiles[x, y].Collision == TileCollision.Ladder)
+                    {
+                        spriteBatch.Draw(texture, position,
+                            new Rectangle(0, 0, Tile.Width, Tile.Height),
+                            Color.WhiteSmoke);
+                    }
+                    else
+                        spriteBatch.Draw(texture, position,
+                            new Rectangle(0, 32, Tile.Width, Tile.Height),
+                            Color.White);
                 }
             }
         }

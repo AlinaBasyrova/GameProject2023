@@ -5,22 +5,56 @@
   <Config />
   <SourceFiles>
     <File>C:/Users/79049/OneDrive/Документы/GitHub/GameProject2023/PlatformerGame2023/Content/2d/1422434242_ed7db70c1148.jpg</File>
+    <File>C:/Users/79049/OneDrive/Документы/GitHub/GameProject2023/PlatformerGame2023/Content/2d/Background1.png</File>
+    <File>C:/Users/79049/OneDrive/Документы/GitHub/GameProject2023/PlatformerGame2023/Content/2d/Background2.png</File>
+    <File>C:/Users/79049/OneDrive/Документы/GitHub/GameProject2023/PlatformerGame2023/Content/2d/Ball and Chain Bot/attack.png</File>
+    <File>C:/Users/79049/OneDrive/Документы/GitHub/GameProject2023/PlatformerGame2023/Content/2d/Ball and Chain Bot/charge.png</File>
+    <File>C:/Users/79049/OneDrive/Документы/GitHub/GameProject2023/PlatformerGame2023/Content/2d/Ball and Chain Bot/death.png</File>
+    <File>C:/Users/79049/OneDrive/Документы/GitHub/GameProject2023/PlatformerGame2023/Content/2d/Ball and Chain Bot/hit.png</File>
+    <File>C:/Users/79049/OneDrive/Документы/GitHub/GameProject2023/PlatformerGame2023/Content/2d/Ball and Chain Bot/idle.png</File>
+    <File>C:/Users/79049/OneDrive/Документы/GitHub/GameProject2023/PlatformerGame2023/Content/2d/Ball and Chain Bot/run.png</File>
+    <File>C:/Users/79049/OneDrive/Документы/GitHub/GameProject2023/PlatformerGame2023/Content/2d/Ball and Chain Bot/run1.png</File>
+    <File>C:/Users/79049/OneDrive/Документы/GitHub/GameProject2023/PlatformerGame2023/Content/2d/Ball and Chain Bot/transition to charge.png</File>
+    <File>C:/Users/79049/OneDrive/Документы/GitHub/GameProject2023/PlatformerGame2023/Content/2d/Bot Wheel/charge.png</File>
+    <File>C:/Users/79049/OneDrive/Документы/GitHub/GameProject2023/PlatformerGame2023/Content/2d/Bot Wheel/damaged.png</File>
+    <File>C:/Users/79049/OneDrive/Документы/GitHub/GameProject2023/PlatformerGame2023/Content/2d/Bot Wheel/death.png</File>
+    <File>C:/Users/79049/OneDrive/Документы/GitHub/GameProject2023/PlatformerGame2023/Content/2d/Bot Wheel/GAS dash FX.png</File>
+    <File>C:/Users/79049/OneDrive/Документы/GitHub/GameProject2023/PlatformerGame2023/Content/2d/Bot Wheel/GAS dash with FX.png</File>
+    <File>C:/Users/79049/OneDrive/Документы/GitHub/GameProject2023/PlatformerGame2023/Content/2d/Bot Wheel/move FX.png</File>
+    <File>C:/Users/79049/OneDrive/Документы/GitHub/GameProject2023/PlatformerGame2023/Content/2d/Bot Wheel/move with FX.png</File>
+    <File>C:/Users/79049/OneDrive/Документы/GitHub/GameProject2023/PlatformerGame2023/Content/2d/Bot Wheel/move without FX.png</File>
+    <File>C:/Users/79049/OneDrive/Документы/GitHub/GameProject2023/PlatformerGame2023/Content/2d/Bot Wheel/shoot FX.png</File>
+    <File>C:/Users/79049/OneDrive/Документы/GitHub/GameProject2023/PlatformerGame2023/Content/2d/Bot Wheel/shoot with FX.png</File>
+    <File>C:/Users/79049/OneDrive/Документы/GitHub/GameProject2023/PlatformerGame2023/Content/2d/Bot Wheel/shoot without FX.png</File>
+    <File>C:/Users/79049/OneDrive/Документы/GitHub/GameProject2023/PlatformerGame2023/Content/2d/Bot Wheel/static idle.png</File>
+    <File>C:/Users/79049/OneDrive/Документы/GitHub/GameProject2023/PlatformerGame2023/Content/2d/Bot Wheel/wake.png</File>
+    <File>C:/Users/79049/OneDrive/Документы/GitHub/GameProject2023/PlatformerGame2023/Content/2d/Bullet.png</File>
     <File>C:/Users/79049/OneDrive/Документы/GitHub/GameProject2023/PlatformerGame2023/Content/2d/ChikBoy_idle.png</File>
     <File>C:/Users/79049/OneDrive/Документы/GitHub/GameProject2023/PlatformerGame2023/Content/2d/ChikBoy_run.png</File>
-    <File>C:/Users/79049/OneDrive/Документы/GitHub/GameProject2023/PlatformerGame2023/Content/2d/Dungeon Ruins Tileset/Dungeon Ruins Tileset/Dungeon Ruins Tileset Day.png</File>
-    <File>C:/Users/79049/OneDrive/Документы/GitHub/GameProject2023/PlatformerGame2023/Content/2d/Dungeon Ruins Tileset/Dungeon Ruins Tileset/Dungeon Ruins Tileset Night.png</File>
-    <File>C:/Users/79049/OneDrive/Документы/GitHub/GameProject2023/PlatformerGame2023/Content/2d/Meow Knight/Meow Knight/Meow-Knight_Attack_1.png</File>
-    <File>C:/Users/79049/OneDrive/Документы/GitHub/GameProject2023/PlatformerGame2023/Content/2d/Meow Knight/Meow Knight/Meow-Knight_Attack_2.png</File>
-    <File>C:/Users/79049/OneDrive/Документы/GitHub/GameProject2023/PlatformerGame2023/Content/2d/Meow Knight/Meow Knight/Meow-Knight_Attack_3.png</File>
-    <File>C:/Users/79049/OneDrive/Документы/GitHub/GameProject2023/PlatformerGame2023/Content/2d/Meow Knight/Meow Knight/Meow-Knight_Attack_4.png</File>
-    <File>C:/Users/79049/OneDrive/Документы/GitHub/GameProject2023/PlatformerGame2023/Content/2d/Meow Knight/Meow Knight/Meow-Knight_Death.png</File>
-    <File>C:/Users/79049/OneDrive/Документы/GitHub/GameProject2023/PlatformerGame2023/Content/2d/Meow Knight/Meow Knight/Meow-Knight_Dodge.png</File>
-    <File>C:/Users/79049/OneDrive/Документы/GitHub/GameProject2023/PlatformerGame2023/Content/2d/Meow Knight/Meow Knight/Meow-Knight_Idle.png</File>
-    <File>C:/Users/79049/OneDrive/Документы/GitHub/GameProject2023/PlatformerGame2023/Content/2d/Meow Knight/Meow Knight/Meow-Knight_Jump.png</File>
-    <File>C:/Users/79049/OneDrive/Документы/GitHub/GameProject2023/PlatformerGame2023/Content/2d/Meow Knight/Meow Knight/Meow-Knight_Run.png</File>
-    <File>C:/Users/79049/OneDrive/Документы/GitHub/GameProject2023/PlatformerGame2023/Content/2d/Meow Knight/Meow Knight/Meow-Knight_Take_Damage.png</File>
+    <File>C:/Users/79049/OneDrive/Документы/GitHub/GameProject2023/PlatformerGame2023/Content/2d/Props-01.png</File>
+    <File>C:/Users/79049/OneDrive/Документы/GitHub/GameProject2023/PlatformerGame2023/Content/2d/Thrusts 1 SpriteSheet.png</File>
+    <File>C:/Users/79049/OneDrive/Документы/GitHub/GameProject2023/PlatformerGame2023/Content/2d/Tiles.png</File>
+    <File>C:/Users/79049/OneDrive/Документы/GitHub/GameProject2023/PlatformerGame2023/Content/2d/you_died.png</File>
+    <File>C:/Users/79049/OneDrive/Документы/GitHub/GameProject2023/PlatformerGame2023/Content/2d/you_win.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

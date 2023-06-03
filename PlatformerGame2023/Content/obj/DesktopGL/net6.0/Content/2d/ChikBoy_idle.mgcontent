@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <SourceFile>C:/Users/79049/OneDrive/Документы/GitHub/GameProject2023/PlatformerGame2023/Content/2d/ChikBoy_idle.png</SourceFile>
-  <SourceTime>2023-04-22T13:18:20.5589488+05:00</SourceTime>
+  <SourceTime>2023-05-27T03:52:34.3081662+05:00</SourceTime>
   <DestFile>C:/Users/79049/OneDrive/Документы/GitHub/GameProject2023/PlatformerGame2023/Content/bin/DesktopGL/Content/2d/ChikBoy_idle.xnb</DestFile>
-  <DestTime>2023-04-22T13:32:23.7716885+05:00</DestTime>
+  <DestTime>2023-05-27T04:17:39.557692+05:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2022-07-26T16:44:56+05:00</ImporterTime>
   <Processor>TextureProcessor</Processor>
