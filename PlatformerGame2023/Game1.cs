@@ -10,7 +10,7 @@ public class Game1 : Game
     private GraphicsDeviceManager _graphics;
     private SpriteBatch _spriteBatch;
     private Level _level;
-    private int levelIndex = 1;
+    private int levelIndex = -1;
     private const int numberOfLevels = 3;
     private Matrix globalTransformation;
     int backbufferWidth, backbufferHeight;
@@ -18,7 +18,6 @@ public class Game1 : Game
     Texture2D backgroundTexture;
     private Texture2D winOverlay;
     private Texture2D diedOverlay;
-    private Texture2D startOverlay;
 
 
 
@@ -47,7 +46,6 @@ public class Game1 : Game
         backgroundTexture = Content.Load<Texture2D>("2d/Background1");
         winOverlay = Content.Load<Texture2D>("2d/you_win");
         diedOverlay = Content.Load<Texture2D>("2d/you_died");
-        startOverlay = Content.Load<Texture2D>("2d/Background2");
 
 
 
